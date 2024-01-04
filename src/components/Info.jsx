@@ -4,7 +4,6 @@ import { useForm } from "../context/FormContext";
 
 const Info = ({ width }) => {
   const { personalInfo, setPersonalInfo } = useForm();
-  const [isValid, setIsValid] = useState(false);
 
   function validateEmail(input) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -12,7 +11,10 @@ const Info = ({ width }) => {
   }
 
   useEffect(() => {
-    setIsValid(validateEmail(personalInfo.email));
+    setPersonalInfo({
+      ...personalInfo,
+      validEmail: validateEmail(personalInfo.email),
+    });
   }, [personalInfo]);
 
   return (
@@ -77,7 +79,7 @@ const Info = ({ width }) => {
                 >
                   {!personalInfo.email
                     ? "This field is required"
-                    : !isValid
+                    : !personalInfo.validEmail
                     ? "Valid email required"
                     : null}
                 </label>
@@ -138,7 +140,7 @@ const Info = ({ width }) => {
           </div>
         </div>
       </div>
-      {width < 421 ? null : (<NextButton />)}
+      {width < 421 ? null : <NextButton />}
     </div>
   );
 };

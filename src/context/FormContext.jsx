@@ -11,6 +11,7 @@ export function FormContextProvider({ children }) {
     name: "",
     email: "",
     phone: "",
+    validEmail: false,
     showErrMessage: false,
     planErrMessage: false,
   });
