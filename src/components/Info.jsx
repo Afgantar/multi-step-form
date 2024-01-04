@@ -15,7 +15,8 @@ const Info = ({ width }) => {
       ...personalInfo,
       validEmail: validateEmail(personalInfo.email),
     });
-  }, [personalInfo]);
+    console.log(personalInfo)
+  }, [personalInfo.email]);
 
   return (
     <div className="flex flex-col h-full w-full animate-slideFromRight">
@@ -77,11 +78,8 @@ const Info = ({ width }) => {
                   htmlFor="email"
                   className="text-[13px] font-bold text-strawberry-red"
                 >
-                  {!personalInfo.email
-                    ? "This field is required"
-                    : !personalInfo.validEmail
-                    ? "Valid email required"
-                    : null}
+                  {!personalInfo.email && "This field is required"}
+                  {personalInfo.email && !personalInfo.validEmail && "Valid email required"}
                 </label>
               )}
             </div>

@@ -15,6 +15,10 @@ const NextButton = () => {
       }
 
       if (!personalInfo.validEmail) {
+        setPersonalInfo({
+          ...personalInfo,
+          showErrMessage: true,
+        });
         return;
       }
 
