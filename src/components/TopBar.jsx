@@ -1,6 +1,6 @@
 import React from "react";
 import SideIndicator from "./SideIndicator";
-import SideMobile from "../assets/images/bg-sidebar-mobile.svg"
+import SideMobile from "/bg-sidebar-mobile.svg"
 
 const TopBar = ({width}) => {
   return (

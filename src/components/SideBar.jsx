@@ -1,6 +1,6 @@
 import React from "react";
 import SideIndicator from "./SideIndicator";
-import SideDesktop from "../assets/images/bg-sidebar-desktop.svg"
+import SideDesktop from "/bg-sidebar-desktop.svg"
 
 const SideBar = ({width}) => {
   return (
