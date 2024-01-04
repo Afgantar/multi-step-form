@@ -1,0 +1,20 @@
+@import './fonts.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
+}
+
+body {
+  background-color: hsl(217, 100%, 97%);
+}
+
+@media screen and (max-width: 820px) {
+  *{
+    font-size: 12px;
+  }
+}
